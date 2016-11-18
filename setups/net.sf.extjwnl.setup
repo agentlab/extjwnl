@@ -30,6 +30,12 @@
         <value>remoteURI</value>
       </detail>
     </annotation>
+    <configSections
+        name="core">
+      <properties
+          key="autocrlf"
+          value="false"/>
+    </configSections>
     <description>${scope.project.label}</description>
   </setupTask>
   <setupTask
