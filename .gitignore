@@ -1,9 +1,40 @@
-*.iml
-.idea
+# Dirs With Binaries #
+bin
+lib
+target
+xtend-gen
+src-gen
+classes
+temp
 **/target/
 /target
 /data/
 /extjwnl/data/
-**/.classpath
-.project
-.settings/
+
+# Binary Files #
+*.class
+*.dll
+*.lib
+*.exe
+*.obj
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.rar
+*.7z
+*.tar
+
+# Temporary Files #
+*.bak
+*.target
+
+# Data Files #
+*.dat
+*.idn
+
+# IDE files #
+*.iml
+.idea
