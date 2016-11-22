@@ -1,17 +1,7 @@
 package net.sf.extjwnl.princeton.file;
 
-import net.sf.extjwnl.JWNLException;
-import net.sf.extjwnl.JWNLIOException;
-import net.sf.extjwnl.data.POS;
-import net.sf.extjwnl.dictionary.Dictionary;
-import net.sf.extjwnl.dictionary.file.DictionaryFileFactory;
-import net.sf.extjwnl.dictionary.file.DictionaryFileType;
-import net.sf.extjwnl.util.ByteArrayCharSequence;
-import net.sf.extjwnl.util.CharBufferCharSequence;
-import net.sf.extjwnl.util.PointedCharSequence;
-import net.sf.extjwnl.util.factory.Param;
-
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -24,6 +14,17 @@ import java.nio.charset.CharacterCodingException;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 import java.util.Map;
+
+import net.sf.extjwnl.JWNLException;
+import net.sf.extjwnl.JWNLIOException;
+import net.sf.extjwnl.data.POS;
+import net.sf.extjwnl.dictionary.Dictionary;
+import net.sf.extjwnl.dictionary.file.DictionaryFileFactory;
+import net.sf.extjwnl.dictionary.file.DictionaryFileType;
+import net.sf.extjwnl.util.ByteArrayCharSequence;
+import net.sf.extjwnl.util.CharBufferCharSequence;
+import net.sf.extjwnl.util.PointedCharSequence;
+import net.sf.extjwnl.util.factory.Param;
 
 /**
  * Loads dictionary files from classpath.
@@ -76,9 +77,12 @@ public class PrincetonResourceDictionaryFile extends AbstractPrincetonRandomAcce
 
     @Override
     public void open() throws JWNLException {
-        InputStream input = PrincetonResourceDictionaryFile.class.getResourceAsStream(path + "/" + getFilename());
+        String name = "/" + path + "/" + getFilename();
+
+        InputStream input = null;
         try {
             try {
+                input = new FileInputStream(name);//PrincetonResourceDictionaryFile.class.getResourceAsStream(name);
                 // data.noun is about 16M
                 ByteArrayOutputStream output = new ByteArrayOutputStream(16 * 1024 * 1024);
                 try {
@@ -88,7 +92,10 @@ public class PrincetonResourceDictionaryFile extends AbstractPrincetonRandomAcce
                     output.close();
                 }
             } finally {
-                input.close();
+                if (input != null)
+                {
+                    input.close();
+                }
             }
         } catch (IOException e) {
             throw new JWNLIOException(e);
@@ -257,6 +264,7 @@ public class PrincetonResourceDictionaryFile extends AbstractPrincetonRandomAcce
         return result;
     }
 
+    @Override
     public long length() throws JWNLException {
         return buffer.length;
     }

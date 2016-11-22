@@ -1,13 +1,26 @@
 package net.sf.extjwnl.dictionary;
 
-import net.sf.extjwnl.JWNLException;
-import net.sf.extjwnl.data.*;
-import net.sf.extjwnl.dictionary.morph.Util;
-import net.sf.extjwnl.util.ResourceBundleSet;
-import net.sf.extjwnl.util.factory.NameValueParam;
-import net.sf.extjwnl.util.factory.Param;
-import net.sf.extjwnl.util.factory.ParamList;
-import net.sf.extjwnl.util.factory.ValueParam;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StringReader;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.BitSet;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -17,13 +30,22 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.*;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import net.sf.extjwnl.JWNLException;
+import net.sf.extjwnl.data.DictionaryElement;
+import net.sf.extjwnl.data.DictionaryElementFactory;
+import net.sf.extjwnl.data.Exc;
+import net.sf.extjwnl.data.IndexWord;
+import net.sf.extjwnl.data.IndexWordSet;
+import net.sf.extjwnl.data.POS;
+import net.sf.extjwnl.data.Pointer;
+import net.sf.extjwnl.data.Synset;
+import net.sf.extjwnl.data.Word;
+import net.sf.extjwnl.dictionary.morph.Util;
+import net.sf.extjwnl.util.ResourceBundleSet;
+import net.sf.extjwnl.util.factory.NameValueParam;
+import net.sf.extjwnl.util.factory.Param;
+import net.sf.extjwnl.util.factory.ParamList;
+import net.sf.extjwnl.util.factory.ValueParam;
 
 /**
  * Abstract representation of a WordNet dictionary.
@@ -99,7 +121,7 @@ public abstract class Dictionary {
     /**
      * Default name of the configuration file for resource instance creation.
      */
-    public static final String DEFAULT_RESOURCE_CONFIG_PATH = "/extjwnl_resource_properties.xml";
+    public static final String DEFAULT_RESOURCE_CONFIG_PATH = "extjwnl_resource_properties.xml";
 
     private static final Comparator<Word> wordLexIdComparator = new Comparator<Word>() {
         @Override
