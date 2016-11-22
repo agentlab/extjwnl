@@ -40,7 +40,7 @@
         <param name="file_manager" value="net.sf.extjwnl.dictionary.file_manager.FileManagerImpl">
             <param name="check_path" value="false"/>
             <param name="file_type" value="net.sf.extjwnl.princeton.file.PrincetonResourceDictionaryFile"/>
-            <param name="dictionary_path" value="/Users/admin/Desktop/extjwnl-data-wn31-1.2/net/sf/extjwnl/data/wordnet/wn31"/>
+            <param name="dictionary_path" value="C:/Users/Лиза/Desktop/extjwnl-data-wn31-1.2/net/sf/extjwnl/data/wordnet/wn31"/>
         </param>
     </dictionary>
     <resource class="net.sf.extjwnl.princeton.PrincetonResource"/>

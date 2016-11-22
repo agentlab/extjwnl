@@ -7,3 +7,5 @@ Export-Package: net.sf.extjwnl.cli,
  net.sf.extjwnl.dictionary,
  net.sf.extjwnl.utilities
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: net.sf.extjwnl,
+ org.slf4j;version="1.7.2"
