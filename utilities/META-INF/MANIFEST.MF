@@ -11,5 +11,4 @@ Import-Package: net.sf.extjwnl,
  net.sf.extjwnl.data,
  net.sf.extjwnl.data.list,
  net.sf.extjwnl.data.relationship,
- net.sf.extjwnl.dictionary,
- org.slf4j;version="1.7.2"
+ net.sf.extjwnl.dictionary
