@@ -110,7 +110,7 @@
   </setupTask>
   <stream name="master"/>
   <logicalProjectContainer
-      xsi:type="setup:ProjectCatalog"
-      href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']"/>
-  <description>IDE Setup for Calendar Project</description>
+      xsi:type="setup:Project"
+      href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']/@projects[name='osgi']"/>
+  <description>IDE Setup for extJWNL Project</description>
 </setup:Project>
