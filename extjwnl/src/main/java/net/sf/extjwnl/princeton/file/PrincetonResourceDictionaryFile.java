@@ -1,10 +1,11 @@
 package net.sf.extjwnl.princeton.file;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.CharBuffer;
 import java.nio.channels.Channels;
@@ -77,12 +78,31 @@ public class PrincetonResourceDictionaryFile extends AbstractPrincetonRandomAcce
 
     @Override
     public void open() throws JWNLException {
-        String name = "/" + path + "/" + getFilename();
+        String name = "" + path + "/" + getFilename();
 
+        URL url;
         InputStream input = null;
+        try
+        {
+            url = new URL(name);
+            input = url.openConnection().getInputStream();
+        }
+        catch (MalformedURLException e1)
+        {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+//        InputStream input = url.openConnection().getInputStream();
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+//        InputStream input = null;
         try {
             try {
-                input = new FileInputStream(name);//PrincetonResourceDictionaryFile.class.getResourceAsStream(name);
+//                input = new FileInputStream(name);//PrincetonResourceDictionaryFile.class.getResourceAsStream(name);
                 // data.noun is about 16M
                 ByteArrayOutputStream output = new ByteArrayOutputStream(16 * 1024 * 1024);
                 try {

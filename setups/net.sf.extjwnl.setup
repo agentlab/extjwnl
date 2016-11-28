@@ -68,6 +68,8 @@
       </annotation>
       <requirement
           name="*"/>
+      <requirement
+          name="com.googlecode.concurrentlinkedhashmap.lru"/>
       <sourceLocator
           rootFolder="${net.sf.extjwnl.git.clone.location}"
           locateNestedProjects="true"/>
