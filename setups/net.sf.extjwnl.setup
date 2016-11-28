@@ -73,6 +73,11 @@
       <sourceLocator
           rootFolder="${net.sf.extjwnl.git.clone.location}"
           locateNestedProjects="true"/>
+      <repositoryList
+          name="Agentlab">
+        <repository
+            url="http://agentlab.ru/pd/p2/eclipseorbit/"/>
+      </repositoryList>
     </targlet>
   </setupTask>
   <setupTask
