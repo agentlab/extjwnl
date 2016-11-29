@@ -74,7 +74,7 @@
           rootFolder="${net.sf.extjwnl.git.clone.location}"
           locateNestedProjects="true"/>
       <repositoryList
-          name="Agentlab">
+          name="Neon">
         <repository
             url="http://agentlab.ru/pd/p2/eclipseorbit/"/>
       </repositoryList>
