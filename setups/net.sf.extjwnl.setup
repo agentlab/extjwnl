@@ -51,7 +51,7 @@
         </detail>
         <detail
             key="includeAllPlatforms">
-          <value>false</value>
+          <value>true</value>
         </detail>
         <detail
             key="includeSource">
@@ -67,9 +67,9 @@
         </detail>
       </annotation>
       <requirement
-          name="*"/>
-      <requirement
           name="com.googlecode.concurrentlinkedhashmap.lru"/>
+      <requirement
+          name="*"/>
       <sourceLocator
           rootFolder="${net.sf.extjwnl.git.clone.location}"
           locateNestedProjects="true"/>
