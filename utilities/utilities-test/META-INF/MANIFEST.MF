@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Utilities-test
+Bundle-SymbolicName: utilities-test
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: net.sf.extjwnl,
+ net.sf.extjwnl.data,
+ net.sf.extjwnl.data.relationship,
+ net.sf.extjwnl.dictionary,
+ net.sf.extjwnl.dictionary.test,
+ org.junit;version="4.12.0"
+Export-Package: net.sf.extjwnl.dictionary.test

@@ -4,7 +4,6 @@ Bundle-Name: utilities
 Bundle-SymbolicName: utilities
 Bundle-Version: 1.0.0.qualifier
 Export-Package: net.sf.extjwnl.cli,
- net.sf.extjwnl.dictionary,
  net.sf.extjwnl.utilities
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: net.sf.extjwnl,
