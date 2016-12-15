@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<artifactId>extjwnl.osgi.plugins</artifactId>
+	
+	<packaging>pom</packaging>
+	
+	<parent>
+		<groupId>extjwnl.osgi</groupId>
+		<artifactId>extjwnl.osgi.parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+	</parent>
+	
+	<modules>
+		<module>extjwnl</module>
+        <module>extjwnl-test</module>
+        <module>extjwnl.component</module>
+        <module>extjwnl.service</module>
+        <module>utilities</module>
+        <module>utilities-test</module>
+        
+	</modules>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>

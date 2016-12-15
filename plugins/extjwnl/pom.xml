@@ -2,14 +2,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>net.sf.extjwnl</groupId>
-        <artifactId>extjwnl-parent</artifactId>
-        <version>1.9.2-SNAPSHOT</version>
+        <groupId>extjwnl.osgi</groupId>
+        <artifactId>extjwnl.osgi.plugins</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>extjwnl</artifactId>
     <packaging>jar</packaging>
-    <version>1.9.2-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>extJWNL</name>
     <description>extJWNL (Extended Java WordNet Library) is a Java API for creating, reading and updating dictionaries
         in WordNet format

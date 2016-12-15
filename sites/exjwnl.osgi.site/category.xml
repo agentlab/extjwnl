@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="OSGi Logger Service Bridge to slf4j Update Site" url="">
+      OSGi ExtJwnl to ExtJwnl Update Site
+   </description>
+	  
+   <feature id="extjwnl.osgi.feature"><category name="extjwnl.osgi"/></feature>
+   <!--<feature id="org.slf4j.osgi.feature.source"><category name="org.slf4j.osgi"/></feature> -->
+</site>
