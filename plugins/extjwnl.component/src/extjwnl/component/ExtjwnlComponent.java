@@ -14,7 +14,6 @@ import org.osgi.service.component.annotations.Activate;
 import extjwnl.service.IExtjwnlService;
 import net.sf.extjwnl.JWNLException;
 import net.sf.extjwnl.dictionary.Dictionary;
-import net.sf.extjwnl.utilities.Examples;
 
 /**
  * @author admin
@@ -44,19 +43,6 @@ public class ExtjwnlComponent
         {
             // TODO Auto-generated catch block
             e.printStackTrace();
-        }
-
-        if (null != dictionary)
-        {
-            try
-            {
-                new Examples(dictionary).go();
-            }
-            catch (JWNLException | CloneNotSupportedException e)
-            {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
         }
 
         System.err.println("Start !!!!"); //$NON-NLS-1$
