@@ -69,6 +69,8 @@
       <requirement
           name="com.googlecode.concurrentlinkedhashmap.lru"/>
       <requirement
+          name="com.tngtech.java.junit-dataprovider"/>
+      <requirement
           name="*"/>
       <sourceLocator
           rootFolder="${net.sf.extjwnl.git.clone.location}"
