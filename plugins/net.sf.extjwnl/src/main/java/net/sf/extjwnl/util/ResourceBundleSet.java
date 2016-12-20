@@ -1,6 +1,11 @@
 package net.sf.extjwnl.util;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
  * A ResourceBundle that is a proxy to multiple ResourceBundles.
@@ -11,7 +16,7 @@ import java.util.*;
 public class ResourceBundleSet extends ResourceBundle {
 
     private Locale locale = null;
-    private final List<String> resources = new ArrayList<String>();
+    private final List<String> resources = new ArrayList<>();
 
     public ResourceBundleSet(String resource) {
         addResource(resource);
@@ -25,11 +30,13 @@ public class ResourceBundleSet extends ResourceBundle {
         this.locale = locale;
     }
 
+    @Override
     public Enumeration<String> getKeys() {
         return new Enumeration<String>() {
             private final Iterator<String> itr = resources.iterator();
             private Enumeration<String> currentEnum;
 
+            @Override
             public boolean hasMoreElements() {
                 if (currentEnum == null || !currentEnum.hasMoreElements()) {
                     if (itr.hasNext()) {
@@ -40,6 +47,7 @@ public class ResourceBundleSet extends ResourceBundle {
             }
 
 
+            @Override
             public String nextElement() {
                 return currentEnum.nextElement();
             }
@@ -93,6 +101,7 @@ public class ResourceBundleSet extends ResourceBundle {
         return buf.toString();
     }
 
+    @Override
     protected Object handleGetObject(String key) {
         for (String resource : resources) {
             ResourceBundle bundle = getBndl(resource);
@@ -105,9 +114,9 @@ public class ResourceBundleSet extends ResourceBundle {
 
     private ResourceBundle getBndl(String bundle) {
         if (null != locale) {
-            return ResourceBundle.getBundle(bundle, locale);
+            return ResourceBundle.getBundle(bundle, locale, this.getClass().getClassLoader());
         } else {
-            return ResourceBundle.getBundle(bundle);
+            return ResourceBundle.getBundle(bundle, Locale.getDefault(), this.getClass().getClassLoader());
         }
     }
 }
