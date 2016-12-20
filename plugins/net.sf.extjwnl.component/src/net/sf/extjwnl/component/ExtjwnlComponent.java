@@ -34,8 +34,10 @@ public class ExtjwnlComponent
 
         try
         {
+//            net.sf.extjwnl.component\src\net\sf\extjwnl\component\extjwnl_resource_properties.xml
             URL url =
-			    new URL("platform:/plugin/net.sf.extjwnl.component/src/net/sf/extjwnl/component/extjwnl_resource_properties.xml");
+                new URL(
+                    "platform:/plugin/net.sf.extjwnl.data.wn31/extjwnl_resource_properties.xml");
             InputStream inputStream = url.openConnection().getInputStream();
             dictionary = Dictionary.getInstance(inputStream);
         }
