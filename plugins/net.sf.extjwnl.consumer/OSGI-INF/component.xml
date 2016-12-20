@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="net.sf.extjwnl.consumer">
+   <implementation class="net.sf.extjwnl.consumer.ExtJwnlConsumer"/>
+   <reference bind="setDictionary" cardinality="1..1" interface="net.sf.extjwnl.service.IExtjwnlService"
+    name="IExtjwnlService" policy="static" unbind="unsetDictionary"/>
+</scr:component>

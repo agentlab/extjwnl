@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: extJWNL Service
+Bundle-SymbolicName: net.sf.extjwnl.service
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: net.sf.extjwnl,
+ net.sf.extjwnl.dictionary
+Export-Package: net.sf.extjwnl.service
+Require-Bundle: net.sf.extjwnl,
+ net.sf.extjwnl.utilities;bundle-version="1.0.0"
+Bundle-Vendor: AgentLab
+Bundle-ActivationPolicy: lazy

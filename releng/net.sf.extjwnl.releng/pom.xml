@@ -7,8 +7,8 @@
 	<packaging>eclipse-target-definition</packaging>
 
 	<parent>
-		<groupId>extjwnl.osgi</groupId>
-		<artifactId>extjwnl.osgi.parent</artifactId>
+		<groupId>net.sf.extjwnl</groupId>
+		<artifactId>net.sf.extjwnl.parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../../pom.xml</relativePath>
 	</parent>

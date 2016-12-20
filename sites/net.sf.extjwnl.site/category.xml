@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="OSGi ExtJWNL Update Site" url="">
+      OSGi ExtJwnl Update Site
+   </description>
+
+   <feature id="net.sf.extjwnl.feature"><category name="net.sf.extjwnl.category"/></feature>
+   <feature id="net.sf.extjwnl.sdk.feature"><category name="net.sf.extjwnl.category"/></feature>
+</site>

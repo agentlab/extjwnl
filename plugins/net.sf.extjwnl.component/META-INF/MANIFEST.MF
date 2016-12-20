@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: extJWNL Component
+Bundle-SymbolicName: net.sf.extjwnl.component
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: net.sf.extjwnl,
+ net.sf.extjwnl.dictionary,
+ net.sf.extjwnl.service,
+ net.sf.extjwnl.utilities,
+ org.osgi.service.component;version="1.2.2",
+ org.osgi.service.component.annotations;version="1.2.0"
+Service-Component: OSGI-INF/extjwnl.component.ExtjwnlComponent.xml
+Bundle-ActivationPolicy: lazy
+Require-Bundle: net.sf.extjwnl,
+ net.sf.extjwnl.utilities;bundle-version="1.0.0"
+Bundle-Vendor: AgentLab

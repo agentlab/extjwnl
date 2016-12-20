@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: extJWNL Consumer
+Bundle-SymbolicName: net.sf.extjwnl.consumer
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: net.sf.extjwnl.service
+Require-Bundle: net.sf.extjwnl,
+ net.sf.extjwnl.utilities
+Service-Component: OSGI-INF/component.xml
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: AgentLab

@@ -1,7 +1,0 @@
-language: java
-jdk:
-  - oraclejdk7
-  - openjdk7
-  - oraclejdk8
-install: mvn -B install -DskipTests=true
-script: mvn -B verify -Pintegration-tests

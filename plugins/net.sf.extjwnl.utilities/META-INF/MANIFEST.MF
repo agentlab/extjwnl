@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: extJWNL Utilities
+Bundle-SymbolicName: net.sf.extjwnl.utilities
+Bundle-Version: 1.0.0.qualifier
+Export-Package: net.sf.extjwnl.cli,
+ net.sf.extjwnl.utilities
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: net.sf.extjwnl,
+ net.sf.extjwnl.data,
+ net.sf.extjwnl.data.list,
+ net.sf.extjwnl.data.relationship,
+ net.sf.extjwnl.dictionary,
+ org.junit;version="4.12.0",
+ org.slf4j;version="1.7.2"
+Require-Bundle: net.sf.extjwnl;bundle-version="1.0.0"
+Bundle-Vendor: AgentLab
