@@ -6,4 +6,6 @@
 
    <feature id="net.sf.extjwnl.feature"><category name="net.sf.extjwnl.category"/></feature>
    <feature id="net.sf.extjwnl.sdk.feature"><category name="net.sf.extjwnl.category"/></feature>
+    <feature id="net.sf.extjwnl.feature.source"><category name="net.sf.extjwnl.category"/></feature>
+   <feature id="net.sf.extjwnl.sdk.feature.source"><category name="net.sf.extjwnl.category"/></feature>
 </site>
