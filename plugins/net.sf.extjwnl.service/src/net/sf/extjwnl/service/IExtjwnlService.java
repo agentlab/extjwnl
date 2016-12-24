@@ -3,6 +3,8 @@
  */
 package net.sf.extjwnl.service;
 
+import java.util.List;
+
 import net.sf.extjwnl.dictionary.Dictionary;
 
 /**
@@ -10,6 +12,6 @@ import net.sf.extjwnl.dictionary.Dictionary;
  *
  */
 public interface IExtjwnlService {
-    Dictionary getDictionary();
+    List<Dictionary> getDictionary();
 
 }

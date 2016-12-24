@@ -3,10 +3,11 @@
  */
 package net.sf.extjwnl.component;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.osgi.service.component.ComponentContext;
 import org.osgi.service.component.annotations.Activate;
@@ -22,10 +23,10 @@ import net.sf.extjwnl.service.IExtjwnlService;
 public class ExtjwnlComponent
     implements IExtjwnlService {
 
-    private Dictionary dictionary;
+    private List<Dictionary> dictionary = new LinkedList<>();
 
     @Override
-    public Dictionary getDictionary() {
+    public List<Dictionary> getDictionary() {
         return dictionary;
     }
 
@@ -34,14 +35,15 @@ public class ExtjwnlComponent
 
         try
         {
-//            net.sf.extjwnl.component\src\net\sf\extjwnl\component\extjwnl_resource_properties.xml
-            URL url =
-                new URL(
-                    "platform:/plugin/net.sf.extjwnl.data.wn31/extjwnl_resource_properties.xml");
+            URL url = new URL("platform:/plugin/net.sf.extjwnl.data.wn31/extjwnl_resource_properties.xml");
+//            URL url = new URL("platform:/plugin/net.sf.extjwnl.data.wn31");
+//            final File folder = new File(url.getContent());
+//            FileUtils;
+
             InputStream inputStream = url.openConnection().getInputStream();
-            dictionary = Dictionary.getInstance(inputStream);
+            dictionary.add(Dictionary.getInstance(inputStream));
         }
-        catch (FileNotFoundException | JWNLException e)
+        catch (JWNLException e)
         {
             // TODO Auto-generated catch block
             e.printStackTrace();

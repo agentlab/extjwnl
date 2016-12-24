@@ -3,6 +3,9 @@
  */
 package net.sf.extjwnl.consumer;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import net.sf.extjwnl.JWNLException;
 import net.sf.extjwnl.dictionary.Dictionary;
 import net.sf.extjwnl.service.IExtjwnlService;
@@ -15,7 +18,7 @@ import net.sf.extjwnl.utilities.Examples;
 public class ExtJwnlConsumer {
 
 	private IExtjwnlService extjwnlService;
-	private Dictionary dictionary;
+    private List<Dictionary> dictionary = new LinkedList<>();;
 
 	public synchronized void setDictionary(IExtjwnlService service) {
 		System.err.println("Service was set. Thank you DS!");
@@ -25,16 +28,13 @@ public class ExtJwnlConsumer {
 
 		if (null != dictionary) {
 			try {
-				new Examples(dictionary).go();
+                new Examples(dictionary.get(0)).go();
 			}
 			catch (JWNLException | CloneNotSupportedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-
-		// I know I should not use the service here but just for demonstration
-//		System.out.println(service.getQuote());
 	}
 
 	// Method will be used by DS to unset the quote service
