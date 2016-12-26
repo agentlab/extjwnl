@@ -25,13 +25,6 @@
          unpack="false"/>
 
    <plugin
-         id="net.sf.extjwnl.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="net.sf.extjwnl.component"
          download-size="0"
          install-size="0"
@@ -53,14 +46,6 @@
          unpack="false"/>
 
    <plugin
-         id="net.sf.extjwnl.utilities.tests"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-         
-         
-    <plugin
          id="net.sf.extjwnl.data.wn31"
          download-size="0"
          install-size="0"

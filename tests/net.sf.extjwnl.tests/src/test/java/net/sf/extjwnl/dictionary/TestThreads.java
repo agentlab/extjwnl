@@ -2,6 +2,7 @@ package net.sf.extjwnl.dictionary;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -47,7 +48,8 @@ public class TestThreads extends MultiThreadedTestCase {
         try
         {
             url = new URL("platform:/plugin/net.sf.extjwnl.tests/resources/test_file_properties.xml");
-            dictionary = Dictionary.getInstance(url.openStream());
+            InputStream is = url.openStream();
+            dictionary = Dictionary.getInstance(is);
         }
         catch (IOException e)
         {
