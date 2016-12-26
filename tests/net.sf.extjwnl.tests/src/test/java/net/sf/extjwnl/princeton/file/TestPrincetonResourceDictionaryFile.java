@@ -1,8 +1,22 @@
 package net.sf.extjwnl.princeton.file;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
+
 import net.sf.extjwnl.JWNLException;
 import net.sf.extjwnl.data.POS;
 import net.sf.extjwnl.dictionary.Dictionary;
@@ -11,21 +25,6 @@ import net.sf.extjwnl.util.PointedCharSequence;
 import net.sf.extjwnl.util.ResourceBundleSet;
 import net.sf.extjwnl.util.factory.NameValueParam;
 import net.sf.extjwnl.util.factory.Param;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.lang.reflect.Field;
-import java.nio.ByteBuffer;
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
 
 @RunWith(DataProviderRunner.class)
 public class TestPrincetonResourceDictionaryFile {
@@ -53,7 +52,7 @@ public class TestPrincetonResourceDictionaryFile {
         when(d.getMessages()).thenReturn(b);
         when(b.resolveMessage("PRINCETON_EXCEPTION_001")).thenReturn("Illegal Operation: file is not open or is not readable");
 
-        Map<String, Param> params = new HashMap<String, Param>();
+        Map<String, Param> params = new HashMap<>();
         if (null != encoding) {
             NameValueParam e = new NameValueParam(null, AbstractPrincetonRandomAccessDictionaryFile.ENCODING_KEY, encoding);
             params.put(AbstractPrincetonRandomAccessDictionaryFile.ENCODING_KEY, e);
@@ -65,7 +64,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test
     public void testReadLinePre() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         assertNull(pradf.readLine(-1));
         assertNull(pradf.readLine(Integer.MAX_VALUE));
@@ -74,7 +73,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test(expected = JWNLException.class)
     public void testReadLineJWNLException() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         Field field = PrincetonResourceDictionaryFile.class.getDeclaredField("buffer");
         field.setAccessible(true);
@@ -95,7 +94,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testReadLine")
     public void testReadLine(final int o, final String s, final long p) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         PointedCharSequence sequence = pradf.readLine(o);
         assertNotNull(sequence);
@@ -117,7 +116,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testReadLineUTF")
     public void testReadLineUTF(final int o, final String s, final long p) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF("UTF-8", "readLineUTF.txt");
+        initPRADF("UTF-8", "platform:/plugin/net.sf.extjwnl.tests/resources/readLineUTF.txt");
 
         PointedCharSequence sequence = pradf.readLine(o);
         assertNotNull(sequence);
@@ -128,7 +127,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test
     public void testReadWordPre() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         assertNull(pradf.readWord(-1));
         assertNull(pradf.readWord(Integer.MAX_VALUE));
@@ -137,7 +136,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test(expected = JWNLException.class)
     public void testReadWordJWNLException() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         Field field = PrincetonResourceDictionaryFile.class.getDeclaredField("buffer");
         field.setAccessible(true);
@@ -158,7 +157,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testReadWord")
     public void testReadWord(final int o, final String s, final long p) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         PointedCharSequence sequence = pradf.readWord(o);
         assertNotNull(sequence);
@@ -183,7 +182,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testReadWordUTF")
     public void testReadWordUTF(final int o, final String s, final long p) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF("UTF-8", "readLineUTF.txt");
+        initPRADF("UTF-8", "platform:/plugin/net.sf.extjwnl.tests/resources/readLineUTF.txt");
 
         PointedCharSequence sequence = pradf.readWord(o);
         assertNotNull(sequence);
@@ -193,7 +192,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test(expected = JWNLException.class)
     public void testGetFirstLineOffsetJWNLException() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "firstLineOffset.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/firstLineOffset.txt");
 
         Field field = PrincetonResourceDictionaryFile.class.getDeclaredField("buffer");
         field.setAccessible(true);
@@ -203,18 +202,18 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test
     public void testGetFirstLineOffset() throws NoSuchFieldException, IllegalAccessException, JWNLException {
-        initPRADF(null, "firstLineOffset.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/firstLineOffset.txt");
         assertEquals(2210, pradf.getFirstLineOffset());
         assertEquals(2210, pradf.getFirstLineOffset()); // to cover also cached branch
         assertEquals("line", pradf.readLine(2210).toString());
 
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
         assertEquals(0, pradf.getFirstLineOffset());
     }
 
     @Test
     public void testGetNextLineOffsetPre() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         assertEquals(-1, pradf.getNextLineOffset(-1));
         assertEquals(-1, pradf.getNextLineOffset(Integer.MAX_VALUE));
@@ -223,7 +222,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test(expected = JWNLException.class)
     public void testGetNextLineOffsetJWNLException() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         Field field = PrincetonResourceDictionaryFile.class.getDeclaredField("buffer");
         field.setAccessible(true);
@@ -247,7 +246,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testGetNextLineOffset")
     public void testGetNextLineOffset(final int x, final int y) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
 
         assertEquals(y, pradf.getNextLineOffset(x));
     }

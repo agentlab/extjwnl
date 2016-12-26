@@ -1,13 +1,30 @@
 package net.sf.extjwnl.dictionary;
 
-import net.sf.extjwnl.JWNLException;
-import net.sf.extjwnl.data.*;
-import org.junit.*;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+
+import net.sf.extjwnl.JWNLException;
+import net.sf.extjwnl.data.AdjectiveSynset;
+import net.sf.extjwnl.data.Exc;
+import net.sf.extjwnl.data.IndexWord;
+import net.sf.extjwnl.data.POS;
+import net.sf.extjwnl.data.Pointer;
+import net.sf.extjwnl.data.PointerType;
+import net.sf.extjwnl.data.Synset;
+import net.sf.extjwnl.data.VerbSynset;
+import net.sf.extjwnl.data.Word;
 
 /**
  * Tests dictionary editing.
@@ -45,7 +62,8 @@ public abstract class DictionaryEditTester {
         dictionary.delete();
 
         dictionary = Dictionary.getInstance(getProperties());
-        mapDictionary = Dictionary.getResourceInstance("/net/sf/extjwnl/dictionary/mem_properties.xml");
+        mapDictionary = Dictionary.getResourceInstance(
+            "platform:/plugin/net.sf.extjwnl/net/sf/extjwnl/dictionary/mem_properties.xml");
     }
 
     @After
@@ -75,7 +93,7 @@ public abstract class DictionaryEditTester {
         final Exc exc = new Exc(dictionary, POS.NOUN, "test", Collections.singletonList("tests"));
         dictionary.addElement(exc);
 
-        List<Exc> excs = new ArrayList<Exc>(1);
+        List<Exc> excs = new ArrayList<>(1);
         Iterator<Exc> i = dictionary.getExceptionIterator(POS.NOUN);
         while (i.hasNext()) {
             excs.add(i.next());
@@ -91,7 +109,7 @@ public abstract class DictionaryEditTester {
         final IndexWord iw = new IndexWord(dictionary, "test", POS.NOUN, s);
         dictionary.addElement(iw);
 
-        List<IndexWord> indexWords = new ArrayList<IndexWord>(1);
+        List<IndexWord> indexWords = new ArrayList<>(1);
         Iterator<IndexWord> i = dictionary.getIndexWordIterator(POS.NOUN);
         while (i.hasNext()) {
             indexWords.add(i.next());
@@ -99,7 +117,7 @@ public abstract class DictionaryEditTester {
         Assert.assertEquals(1, indexWords.size());
         Assert.assertEquals(iw, indexWords.get(0));
 
-        List<Synset> synsets = new ArrayList<Synset>(1);
+        List<Synset> synsets = new ArrayList<>(1);
         Iterator<Synset> ii = dictionary.getSynsetIterator(POS.NOUN);
         while (ii.hasNext()) {
             synsets.add(ii.next());
@@ -318,7 +336,7 @@ public abstract class DictionaryEditTester {
         Assert.assertNotNull(e2);
         Assert.assertNotNull(e3);
 
-        List<Exc> exceptions = new ArrayList<Exc>(3);
+        List<Exc> exceptions = new ArrayList<>(3);
         Iterator<Exc> ei = dictionary.getExceptionIterator(POS.NOUN);
         while (ei.hasNext()) {
             exceptions.add(ei.next());
@@ -340,7 +358,7 @@ public abstract class DictionaryEditTester {
         Assert.assertEquals(exception1[2], e1.getExceptions().get(1));
         Assert.assertNotNull(e2);
 
-        List<Exc> exceptions = new ArrayList<Exc>(2);
+        List<Exc> exceptions = new ArrayList<>(2);
         Iterator<Exc> ei = dictionary.getExceptionIterator(POS.NOUN);
         while (ei.hasNext()) {
             exceptions.add(ei.next());
@@ -361,7 +379,7 @@ public abstract class DictionaryEditTester {
         Assert.assertEquals(0, synEntity.getPointers().size());
         Assert.assertEquals(0, synEntity.getWords().size());
 
-        ArrayList<Synset> synsets = new ArrayList<Synset>();
+        ArrayList<Synset> synsets = new ArrayList<>();
         Iterator<Synset> si = dictionary.getSynsetIterator(POS.NOUN);
         while (si.hasNext()) {
             synsets.add(si.next());
@@ -389,7 +407,7 @@ public abstract class DictionaryEditTester {
 
         saveAndReloadDictionary();
 
-        ArrayList<Synset> synsets = new ArrayList<Synset>();
+        ArrayList<Synset> synsets = new ArrayList<>();
         Iterator<Synset> si = dictionary.getSynsetIterator(POS.NOUN);
         while (si.hasNext()) {
             synsets.add(si.next());
@@ -445,7 +463,7 @@ public abstract class DictionaryEditTester {
         Assert.assertNotNull(iwEntity.getSynsetOffsets());
         Assert.assertEquals(1, iwEntity.getSynsetOffsets().length);
 
-        ArrayList<IndexWord> indexWords = new ArrayList<IndexWord>();
+        ArrayList<IndexWord> indexWords = new ArrayList<>();
         Iterator<IndexWord> ii = dictionary.getIndexWordIterator(POS.NOUN);
         while (ii.hasNext()) {
             indexWords.add(ii.next());
@@ -476,7 +494,7 @@ public abstract class DictionaryEditTester {
         Assert.assertNotNull(iwpEntity.getSynsetOffsets());
         Assert.assertEquals(1, iwpEntity.getSynsetOffsets().length);
 
-        ArrayList<IndexWord> indexWords = new ArrayList<IndexWord>();
+        ArrayList<IndexWord> indexWords = new ArrayList<>();
         Iterator<IndexWord> ii = dictionary.getIndexWordIterator(POS.NOUN);
         while (ii.hasNext()) {
             indexWords.add(ii.next());
@@ -619,8 +637,8 @@ public abstract class DictionaryEditTester {
         createAbstractionWords(dictionary);
 
         Iterator<IndexWord> i = dictionary.getIndexWordIterator(POS.NOUN, "abstract");
-        List<IndexWord> indexWords = new ArrayList<IndexWord>(2);
-        List<String> lemmas = new ArrayList<String>(2);
+        List<IndexWord> indexWords = new ArrayList<>(2);
+        List<String> lemmas = new ArrayList<>(2);
         while (i.hasNext()) {
             indexWords.add(i.next());
             lemmas.add(indexWords.get(indexWords.size() - 1).getLemma());
@@ -642,8 +660,8 @@ public abstract class DictionaryEditTester {
         saveAndReloadDictionary();
 
         Iterator<IndexWord> i = dictionary.getIndexWordIterator(POS.NOUN, "abstract");
-        List<IndexWord> indexWords = new ArrayList<IndexWord>(2);
-        List<String> lemmas = new ArrayList<String>(2);
+        List<IndexWord> indexWords = new ArrayList<>(2);
+        List<String> lemmas = new ArrayList<>(2);
         while (i.hasNext()) {
             indexWords.add(i.next());
             lemmas.add(indexWords.get(indexWords.size() - 1).getLemma());
@@ -763,7 +781,7 @@ public abstract class DictionaryEditTester {
     }
 
     private void testSynsetIterator(Dictionary dictionary) throws JWNLException {
-        List<Synset> synsets = new ArrayList<Synset>();
+        List<Synset> synsets = new ArrayList<>();
         Iterator<Synset> si = dictionary.getSynsetIterator(POS.NOUN);
         while (si.hasNext()) {
             synsets.add(si.next());
@@ -779,7 +797,7 @@ public abstract class DictionaryEditTester {
     }
 
     private void testIndexWordIterator(Dictionary dictionary) throws JWNLException {
-        List<IndexWord> indexWords = new ArrayList<IndexWord>();
+        List<IndexWord> indexWords = new ArrayList<>();
         Iterator<IndexWord> ii = dictionary.getIndexWordIterator(POS.NOUN);
         while (ii.hasNext()) {
             indexWords.add(ii.next());

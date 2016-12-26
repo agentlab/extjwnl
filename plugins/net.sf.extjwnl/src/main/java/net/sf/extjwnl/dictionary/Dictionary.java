@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Collections;
@@ -121,7 +123,7 @@ public abstract class Dictionary {
     /**
      * Default name of the configuration file for resource instance creation.
      */
-    public static final String DEFAULT_RESOURCE_CONFIG_PATH = "extjwnl_resource_properties.xml";
+    public static final String DEFAULT_RESOURCE_CONFIG_PATH = "platform:/plugin/net.sf.extjwnl.data.wn31/extjwnl_resource_properties.xml";
 
     private static final Comparator<Word> wordLexIdComparator = new Comparator<Word>() {
         @Override
@@ -312,8 +314,25 @@ public abstract class Dictionary {
      * @throws JWNLException JWNLException
      */
     public static Dictionary getResourceInstance(String propertiesPath) throws JWNLException {
-        InputStream properties = Dictionary.class.getResourceAsStream(propertiesPath);
-        return getInstance(properties);
+        URL url;
+
+        try
+        {
+            url = new URL(propertiesPath);
+            return getInstance(url.openStream());
+        }
+        catch (MalformedURLException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        // InputStream properties = Dictionary.class.getResourceAsStream(propertiesPath);
+        return null;
     }
 
     public synchronized static void setRestoreDictionary(Dictionary dictionary) {

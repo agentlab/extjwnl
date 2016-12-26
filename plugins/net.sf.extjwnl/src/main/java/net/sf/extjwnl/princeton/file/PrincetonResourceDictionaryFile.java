@@ -80,6 +80,11 @@ public class PrincetonResourceDictionaryFile extends AbstractPrincetonRandomAcce
     public void open() throws JWNLException {
         String name = "" + path + "/" + getFilename();
 
+        if (name.startsWith("/"))
+        {
+            name = name.substring(1, name.length());
+        }
+
         URL url;
         InputStream input = null;
         try

@@ -1,16 +1,19 @@
 package net.sf.extjwnl.dictionary;
 
-import net.sf.extjwnl.JWNLException;
-import net.sf.extjwnl.data.IndexWord;
-import net.sf.extjwnl.data.POS;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.junit.Assert;
-
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import org.junit.Assert;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import net.sf.extjwnl.JWNLException;
+import net.sf.extjwnl.data.IndexWord;
+import net.sf.extjwnl.data.POS;
 
 /**
  * Attempt to reproduce http://sourceforge.net/tracker/?func=detail&aid=3202925&group_id=33824&atid=409470
@@ -39,10 +42,22 @@ public class TestThreads extends MultiThreadedTestCase {
     }
 
     public void testThreadedLookupAllIndexWords() throws FileNotFoundException, JWNLException {
-        dictionary = Dictionary.getInstance(TestThreads.class.getResourceAsStream("/test_file_properties.xml"));
 
-        List<String> words = new ArrayList<String>(Arrays.asList(list));
-        List<String> notwords = new ArrayList<String>(Arrays.asList(notlist));
+        URL url;
+        try
+        {
+            url = new URL("platform:/plugin/net.sf.extjwnl.tests/resources/test_file_properties.xml");
+            dictionary = Dictionary.getInstance(url.openStream());
+        }
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+//        dictionary = Dictionary.getInstance(TestThreads.class.getResourceAsStream("/test_file_properties.xml"));
+
+        List<String> words = new ArrayList<>(Arrays.asList(list));
+        List<String> notwords = new ArrayList<>(Arrays.asList(notlist));
 
         TestCaseRunnable t0 = new Lookup(words, true);
         TestCaseRunnable t1 = new Lookup(words, true);
