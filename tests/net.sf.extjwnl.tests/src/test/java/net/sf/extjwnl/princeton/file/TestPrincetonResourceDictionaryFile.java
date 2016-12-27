@@ -64,7 +64,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test
     public void testReadLinePre() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl/resources/readLineASCII.txt");
 
         assertNull(pradf.readLine(-1));
         assertNull(pradf.readLine(Integer.MAX_VALUE));
@@ -73,7 +73,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test(expected = JWNLException.class)
     public void testReadLineJWNLException() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl/resources/readLineASCII.txt");
 
         Field field = PrincetonResourceDictionaryFile.class.getDeclaredField("buffer");
         field.setAccessible(true);
@@ -94,7 +94,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testReadLine")
     public void testReadLine(final int o, final String s, final long p) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl/resources/readLineASCII.txt");
 
         PointedCharSequence sequence = pradf.readLine(o);
         assertNotNull(sequence);
@@ -116,7 +116,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testReadLineUTF")
     public void testReadLineUTF(final int o, final String s, final long p) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF("UTF-8", "platform:/plugin/net.sf.extjwnl.tests/resources/readLineUTF.txt");
+        initPRADF("UTF-8", "platform:/plugin/net.sf.extjwnl/resources/readLineUTF.txt");
 
         PointedCharSequence sequence = pradf.readLine(o);
         assertNotNull(sequence);
@@ -127,7 +127,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test
     public void testReadWordPre() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl/resources/readLineASCII.txt");
 
         assertNull(pradf.readWord(-1));
         assertNull(pradf.readWord(Integer.MAX_VALUE));
@@ -136,7 +136,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test(expected = JWNLException.class)
     public void testReadWordJWNLException() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl/resources/readLineASCII.txt");
 
         Field field = PrincetonResourceDictionaryFile.class.getDeclaredField("buffer");
         field.setAccessible(true);
@@ -157,7 +157,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testReadWord")
     public void testReadWord(final int o, final String s, final long p) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/readLineASCII.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl/resources/readLineASCII.txt");
 
         PointedCharSequence sequence = pradf.readWord(o);
         assertNotNull(sequence);
@@ -182,7 +182,7 @@ public class TestPrincetonResourceDictionaryFile {
     @Test
     @UseDataProvider("testReadWordUTF")
     public void testReadWordUTF(final int o, final String s, final long p) throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF("UTF-8", "platform:/plugin/net.sf.extjwnl.tests/resources/readLineUTF.txt");
+        initPRADF("UTF-8", "platform:/plugin/net.sf.extjwnl/resources/readLineUTF.txt");
 
         PointedCharSequence sequence = pradf.readWord(o);
         assertNotNull(sequence);
@@ -192,7 +192,7 @@ public class TestPrincetonResourceDictionaryFile {
 
     @Test(expected = JWNLException.class)
     public void testGetFirstLineOffsetJWNLException() throws JWNLException, NoSuchFieldException, IllegalAccessException {
-        initPRADF(null, "platform:/plugin/net.sf.extjwnl.tests/resources/firstLineOffset.txt");
+        initPRADF(null, "platform:/plugin/net.sf.extjwnl/resources/firstLineOffset.txt");
 
         Field field = PrincetonResourceDictionaryFile.class.getDeclaredField("buffer");
         field.setAccessible(true);
