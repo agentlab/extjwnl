@@ -28,6 +28,8 @@ public class TestThreads extends MultiThreadedTestCase {
 
     private static Dictionary dictionary;
 
+    int a;
+
     protected final String[] list = {"tank", "cooler", "pile", "storm", "perfect", "crown", "computer science",
             "failure", "pleasure", "black", "Great Pyramid", "dictionary", "throw", "exception",
             "boredom", "file", "index", "list", "apple", "orange", "pear", "find", "treasure", "memory", "good",
@@ -47,7 +49,9 @@ public class TestThreads extends MultiThreadedTestCase {
         URL url;
         try
         {
-            url = new URL("platform:/plugin/net.sf.extjwnl.tests/resources/test_file_properties.xml");
+            a = 0;
+
+            url = new URL("platform:/plugin/net.sf.extjwnl/resources/test_file_properties.xml");
             InputStream is = url.openStream();
             dictionary = Dictionary.getInstance(is);
         }

@@ -1,6 +1,3 @@
-/**
- *
- */
 package net.sf.extjwnl.component;
 
 import java.io.File;
