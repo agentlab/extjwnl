@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="ru.agentlab.dialogue.stemmer.consumer">
+   <implementation class="ru.agentlab.dialogue.stemmer.consumer.DialogueStemmerConsumer"/>
+   <reference bind="bindDialog" cardinality="1..1" interface="ru.agentlab.dialogue.stemmer.service.IDialogueStemmerService" name="IDialogueStemmerService" policy="static" unbind="unbindDialog"/>
+</scr:component>

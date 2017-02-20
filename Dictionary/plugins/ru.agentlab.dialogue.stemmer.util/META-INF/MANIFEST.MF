@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Util
+Bundle-SymbolicName: ru.agentlab.dialogue.stemmer.component
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: net.sf.extjwnl,
+ net.sf.extjwnl.dictionary,
+ net.sf.extjwnl.service,
+ net.sf.extjwnl.utilities,
+ org.json.simple.parser;version="1.1.1",
+ ru.agentlab.dialogue.stemmer.service,
+ ru.agentlab.mystemwrapper,
+ ru.agentlab.mystemwrapper.service
+Service-Component: OSGI-INF/ru.agentlab.mystemwrapper.component.xml
+Bundle-ActivationPolicy: lazy
