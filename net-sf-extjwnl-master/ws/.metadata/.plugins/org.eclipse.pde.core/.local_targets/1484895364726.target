@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?><target name="Modular Target" sequenceNumber="59">
+<locations>
+<location xmlns:targlets="http://www.eclipse.org/oomph/targlets/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Modular Target" type="Targlet">
+  <targlet activeRepositoryList="Neon" name="MystemWrapper" xsi:type="targlets:Targlet">
+    <annotation source="http:/www.eclipse.org/oomph/targlets/TargetDefinitionGenerator">
+      <detail key="location">
+        <value>D:\eclipse\net-sf-extjwnl-master\git\ru.agentlab.mystemwrapper\releng\ru.agentlab.mystemwrapper.releng\ru.agentlab.mystemwrapper.releng.target</value>
+      </detail>
+      <detail key="includeAllPlatforms">
+        <value>true</value>
+      </detail>
+      <detail key="includeSource">
+        <value>true</value>
+      </detail>
+      <detail key="generateVersions">
+        <value>false</value>
+      </detail>
+      <detail key="generateImplicitUnits">
+        <value>true</value>
+      </detail>
+      <detail key="includeMode">
+        <value>slicer</value>
+      </detail>
+    </annotation>
+    <requirement name="*"/>
+    <requirement name="com.googlecode.json-simple"/>
+    <sourceLocator locateNestedProjects="true" rootFolder="D:\eclipse\net-sf-extjwnl-master\git\ru.agentlab.mystemwrapper"/>
+    <repositoryList name="Neon">
+      <repository url="http://agentlab.ru/pd/p2/eclipseorbit/"/>
+    </repositoryList>
+  </targlet>
+<targlet activeRepositoryList="Neon" includeAllPlatforms="true" name="OSGi Projects" xsi:type="targlets:Targlet">
+    <requirement name="ch.qos.logback.slf4j" versionRange="[1.0.7,1.1.0)"/>
+    <requirement name="ch.qos.logback.classic" versionRange="[1.0.7,1.1.0)"/>
+    <requirement name="ch.qos.logback.core" versionRange="[1.0.7,1.1.0)"/>
+    <requirement name="com.codeaffine.osgi.test.util.feature.feature.group"/>
+    <requirement name="com.google.guava.feature.feature.group" versionRange="[18.0.0,18.1.0)"/>
+    <requirement name="com.google.inject.assistedinject" versionRange="[3.0.0,3.1.0)"/>
+    <requirement name="com.google.inject.multibindings" versionRange="[3.0.0,3.1.0)"/>
+    <requirement name="com.google.jsr305.feature.feature.group" versionRange="[1.0.0,1.1.0)"/>
+    <requirement name="org.apache.commons.codec" versionRange="[1.4.0,2.0.0)"/>
+    <requirement name="org.apache.commons.io" versionRange="[2.2.0,2.3.0)"/>
+    <requirement name="org.apache.commons.collections" versionRange="[3.2.0,3.3.0)"/>
+    <requirement name="org.eclipse.equinox.sdk.feature.group"/>
+    <requirement name="org.eclipse.pde.junit.runtime"/>
+    <requirement name="org.eclipse.swt.dummyfragments.feature.group"/>
+    <requirement name="org.hamcrest.core" versionRange="[1.3.0,2.0.0)"/>
+    <requirement name="org.hamcrest.generator" versionRange="[1.3.0,2.0.0)"/>
+    <requirement name="org.hamcrest.integration" versionRange="[1.3.0,2.0.0)"/>
+    <requirement name="org.hamcrest.library" versionRange="[1.3.0,2.0.0)"/>
+    <requirement name="org.junit.feature.feature.group" versionRange="[4.12.0,5.0.0)"/>
+    <requirement name="org.mockito.feature.feature.group" versionRange="[1.9.5,2.0.0)"/>
+    <requirement name="org.slf4j.api" versionRange="[1.7.2,1.8.0)"/>
+    <requirement name="org.slf4j.jcl" versionRange="[1.7.2,1.8.0)"/>
+    <requirement name="org.slf4j.ext" versionRange="[1.7.2,1.8.0)"/>
+    <requirement name="org.slf4j.jul" versionRange="[1.7.2,1.8.0)"/>
+    <requirement name="org.slf4j.log4j" versionRange="[1.7.2,1.8.0)"/>
+    <repositoryList name="Neon">
+      <repository url="http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository"/>
+      <repository url="http://agentlab.ru/eclipse/update/com.google.jsr305/1.0.0.201502020347"/>
+      <repository url="http://agentlab.ru/eclipse/update/com.google.guava/18.0.0.201502021635"/>
+      <repository url="http://fappel.github.io/xiliary"/>
+      <repository url="http://agentlab.ru/eclipse/update/org.junit/4.12.0/"/>
+      <repository url="http://agentlab.ru/eclipse/update/org.mockito/1.10.19/"/>
+      <repository url="http://agentlab.ru/p2/orbit/missing-swt-fragments/updates/nightly/"/>
+      <repository url="http://download.eclipse.org/eclipse/updates/4.6/"/>
+    </repositoryList>
+    <repositoryList name="Oxygen">
+      <repository url="http://download.eclipse.org/tools/orbit/S-builds/S20170120205402/repository"/>
+      <repository url="http://agentlab.ru/eclipse/update/com.google.jsr305/1.0.0.201502020347"/>
+      <repository url="http://agentlab.ru/eclipse/update/com.google.guava/18.0.0.201502021635"/>
+      <repository url="http://fappel.github.io/xiliary"/>
+      <repository url="http://agentlab.ru/eclipse/update/org.junit/4.12.0/"/>
+      <repository url="http://agentlab.ru/eclipse/update/org.mockito/1.10.19/"/>
+      <repository url="http://agentlab.ru/p2/orbit/missing-swt-fragments/updates/nightly/"/>
+      <repository url="http://download.eclipse.org/eclipse/updates/4.7/"/>
+    </repositoryList>
+  </targlet>
+<targlet activeRepositoryList="Neon" name="extJWNL" xsi:type="targlets:Targlet">
+    <annotation source="http:/www.eclipse.org/oomph/targlets/TargetDefinitionGenerator">
+      <detail key="location">
+        <value>D:\eclipse\net-sf-extjwnl-master\git\extjwnl\releng\net.sf.extjwnl.releng\net.sf.extjwnl.releng.target</value>
+      </detail>
+      <detail key="includeAllPlatforms">
+        <value>true</value>
+      </detail>
+      <detail key="includeSource">
+        <value>true</value>
+      </detail>
+      <detail key="generateVersions">
+        <value>false</value>
+      </detail>
+      <detail key="generateImplicitUnits">
+        <value>true</value>
+      </detail>
+      <detail key="includeMode">
+        <value>slicer</value>
+      </detail>
+    </annotation>
+    <requirement name="com.googlecode.concurrentlinkedhashmap.lru"/>
+    <requirement name="com.tngtech.java.junit-dataprovider"/>
+    <requirement name="*"/>
+    <sourceLocator locateNestedProjects="true" rootFolder="D:\eclipse\net-sf-extjwnl-master\git\extjwnl"/>
+    <repositoryList name="Neon">
+      <repository url="http://agentlab.ru/pd/p2/eclipseorbit/"/>
+    </repositoryList>
+  </targlet>
+</location>
+</locations>
+</target>

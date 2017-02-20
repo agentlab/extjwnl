@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jwnl_properties language="en">
+    <version publisher="Princeton" number="3.1" language="ru"/>
+    <dictionary class="net.sf.extjwnl.dictionary.FileBackedDictionary">
+        <param name="dictionary_element_factory"
+               value="net.sf.extjwnl.princeton.data.PrincetonWN17FileDictionaryElementFactory"/>
+        <param name="file_manager" value="net.sf.extjwnl.dictionary.file_manager.FileManagerImpl">
+            <param name="check_path" value="false"/>
+            <param name="file_type" value="net.sf.extjwnl.princeton.file.PrincetonResourceDictionaryFile"/>
+            <param name="dictionary_path" value="platform:/plugin/net.sf.extjwnl.data.wn31/net/sf/extjwnl/data/wn31"/>
+        </param>
+    </dictionary>
+    <resource class="net.sf.extjwnl.princeton.PrincetonResource"/>
+</jwnl_properties>

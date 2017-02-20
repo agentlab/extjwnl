@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.codeaffine.osgi.test.util.feature"
+      label="OSGi Test Auxiliaries"
+      version="0.1.0.20160623-0336"
+      provider-name="CODE AFFINE">
+
+   <description url="http://fappel.github.io/xiliary/">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update url="http://fappel.github.io/xiliary/"/>
+   </url>
+
+   <requires>
+   </requires>
+
+   <plugin
+         id="com.codeaffine.osgi.test.util"
+         download-size="7"
+         install-size="10"
+         version="0.1.0.20160623-0336"
+         unpack="false"/>
+
+   <plugin
+         id="com.codeaffine.osgi.test.util.source"
+         download-size="3"
+         install-size="5"
+         version="0.1.0.20160623-0336"
+         unpack="false"/>
+
+</feature>

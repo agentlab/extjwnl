@@ -1,0 +1,238 @@
+!SESSION 2017-02-15 14:44:42.293 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_74
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Framework arguments:  -application org.eclipse.ui.ide.workbench
+Command-line arguments:  -application org.eclipse.ui.ide.workbench -data D:\eclipse\net-sf-extjwnl-master\ws/../runtime-EclipseApplication -dev file:D:/eclipse/net-sf-extjwnl-master/ws/.metadata/.plugins/org.eclipse.pde.core/Eclipse Application/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY net.sf.extjwnl.consumer 4 0 2017-02-15 14:44:44.582
+!MESSAGE [SCR] Error while trying to bind reference Reference[name = IExtjwnlService, interface = net.sf.extjwnl.service.IExtjwnlService, policy = static, cardinality = 1..1, target = null, bind = setDictionary, unbind = unsetDictionary]
+	Details:
+	Problematic reference = Reference[name = IExtjwnlService, interface = net.sf.extjwnl.service.IExtjwnlService, policy = static, cardinality = 1..1, target = null, bind = setDictionary, unbind = unsetDictionary]
+	of service component = net.sf.extjwnl.consumer
+	component implementation class = net.sf.extjwnl.consumer.ExtJwnlConsumer
+	located in bundle with symbolic name = net.sf.extjwnl.consumer
+	bundle location = reference:file:/D:/eclipse/net-sf-extjwnl-master/git/extjwnl/plugins/net.sf.extjwnl.consumer/
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.internal.ds.model.ComponentReference.bind(ComponentReference.java:376)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.bindReference(ServiceComponentProp.java:430)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.bind(ServiceComponentProp.java:218)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:343)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:197)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at net.sf.extjwnl.utilities.Examples.demonstrateListOperation(Examples.java:90)
+	at net.sf.extjwnl.utilities.Examples.go(Examples.java:73)
+	at net.sf.extjwnl.consumer.ExtJwnlConsumer.setDictionary(ExtJwnlConsumer.java:31)
+	... 16 more
+Root exception:
+java.lang.NullPointerException
+	at net.sf.extjwnl.utilities.Examples.demonstrateListOperation(Examples.java:90)
+	at net.sf.extjwnl.utilities.Examples.go(Examples.java:73)
+	at net.sf.extjwnl.consumer.ExtJwnlConsumer.setDictionary(ExtJwnlConsumer.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.internal.ds.model.ComponentReference.bind(ComponentReference.java:376)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.bindReference(ServiceComponentProp.java:430)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.bind(ServiceComponentProp.java:218)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:343)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:197)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY net.sf.extjwnl.consumer 4 0 2017-02-15 14:44:44.593
+!MESSAGE [SCR] Error while trying to bind reference Reference[name = IExtjwnlService, interface = net.sf.extjwnl.service.IExtjwnlService, policy = static, cardinality = 1..1, target = null, bind = setDictionary, unbind = unsetDictionary]
+	Details:
+	Problematic reference = Reference[name = IExtjwnlService, interface = net.sf.extjwnl.service.IExtjwnlService, policy = static, cardinality = 1..1, target = null, bind = setDictionary, unbind = unsetDictionary]
+	of service component = net.sf.extjwnl.consumer
+	component implementation class = net.sf.extjwnl.consumer.ExtJwnlConsumer
+	located in bundle with symbolic name = net.sf.extjwnl.consumer
+	bundle location = reference:file:/D:/eclipse/net-sf-extjwnl-master/git/extjwnl/plugins/net.sf.extjwnl.consumer/
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.internal.ds.model.ComponentReference.bind(ComponentReference.java:376)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.bindReference(ServiceComponentProp.java:430)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.bind(ServiceComponentProp.java:218)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:343)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:197)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at net.sf.extjwnl.utilities.Examples.demonstrateListOperation(Examples.java:90)
+	at net.sf.extjwnl.utilities.Examples.go(Examples.java:73)
+	at net.sf.extjwnl.consumer.ExtJwnlConsumer.setDictionary(ExtJwnlConsumer.java:31)
+	... 16 more
+Root exception:
+java.lang.NullPointerException
+	at net.sf.extjwnl.utilities.Examples.demonstrateListOperation(Examples.java:90)
+	at net.sf.extjwnl.utilities.Examples.go(Examples.java:73)
+	at net.sf.extjwnl.consumer.ExtJwnlConsumer.setDictionary(ExtJwnlConsumer.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.internal.ds.model.ComponentReference.bind(ComponentReference.java:376)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.bindReference(ServiceComponentProp.java:430)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.bind(ServiceComponentProp.java:218)
+	at org.eclipse.equinox.internal.ds.model.ServiceComponentProp.build(ServiceComponentProp.java:343)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:620)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponents(InstanceProcess.java:197)
+	at org.eclipse.equinox.internal.ds.Resolver.buildNewlySatisfied(Resolver.java:473)
+	at org.eclipse.equinox.internal.ds.Resolver.enableComponents(Resolver.java:217)
+	at org.eclipse.equinox.internal.ds.SCRManager.performWork(SCRManager.java:816)
+	at org.eclipse.equinox.internal.ds.SCRManager$QueuedJob.dispatch(SCRManager.java:783)
+	at org.eclipse.equinox.internal.ds.WorkThread.run(WorkThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.equinox.ds 4 0 2017-02-15 14:44:44.596
+!MESSAGE Could not bind a reference of component net.sf.extjwnl.consumer. The reference is: Reference[name = IExtjwnlService, interface = net.sf.extjwnl.service.IExtjwnlService, policy = static, cardinality = 1..1, target = null, bind = setDictionary, unbind = unsetDictionary]
+
+!ENTRY org.eclipse.equinox.ds 4 0 2017-02-15 14:44:44.597
+!MESSAGE Could not bind a reference of component net.sf.extjwnl.consumer. The reference is: Reference[name = IExtjwnlService, interface = net.sf.extjwnl.service.IExtjwnlService, policy = static, cardinality = 1..1, target = null, bind = setDictionary, unbind = unsetDictionary]
+
+!ENTRY org.eclipse.equinox.launcher.gtk.linux.ppc64 2 0 2017-02-15 14:44:47.268
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.linux.ppc64 [217]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=ppc64))"
+
+
+!ENTRY org.eclipse.equinox.launcher.win32.win32.x86 2 0 2017-02-15 14:44:47.287
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.win32.win32.x86 [225]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=win32) (osgi.os=win32) (osgi.arch=x86))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.hpux.ia64 2 0 2017-02-15 14:44:47.303
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.hpux.ia64 [215]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=hpux) (osgi.arch=ia64))"
+
+
+!ENTRY org.eclipse.equinox.security.win32.x86 2 0 2017-02-15 14:44:47.305
+!MESSAGE Could not resolve module: org.eclipse.equinox.security.win32.x86 [143]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.os=win32) (osgi.arch=x86))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.aix.ppc64 2 0 2017-02-15 14:44:47.307
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.aix.ppc64 [214]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=aix) (osgi.arch=ppc64))"
+
+
+!ENTRY org.eclipse.equinox.security.macosx 2 0 2017-02-15 14:44:47.312
+!MESSAGE Could not resolve module: org.eclipse.equinox.security.macosx [141]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.os=macosx) (|(osgi.arch=x86)(osgi.arch=x86_64)(osgi.arch=ppc)) )"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.solaris.sparcv9 2 0 2017-02-15 14:44:47.318
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.solaris.sparcv9 [223]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=solaris) (osgi.arch=sparcv9))"
+
+
+!ENTRY org.eclipse.equinox.launcher.cocoa.macosx.x86_64 2 0 2017-02-15 14:44:47.320
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.cocoa.macosx.x86_64 [212]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=cocoa) (osgi.os=macosx) (osgi.arch=x86_64) )"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.linux.ppc 2 0 2017-02-15 14:44:47.322
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.linux.ppc [216]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=ppc))"
+
+
+!ENTRY org.eclipse.swt.gtk.solaris.sparc 2 0 2017-02-15 14:44:47.324
+!MESSAGE Could not resolve module: org.eclipse.swt.gtk.solaris.sparc [207]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=solaris) (osgi.arch=sparc))"
+
+
+!ENTRY org.eclipse.swt.gtk.solaris.x86 2 0 2017-02-15 14:44:47.326
+!MESSAGE Could not resolve module: org.eclipse.swt.gtk.solaris.x86 [208]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=solaris) (osgi.arch=x86))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.linux.ppc64le 2 0 2017-02-15 14:44:47.328
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.linux.ppc64le [218]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=ppc64le))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.linux.s390x 2 0 2017-02-15 14:44:47.330
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.linux.s390x [220]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=s390x))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.solaris.x86_64 2 0 2017-02-15 14:44:47.331
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.solaris.x86_64 [224]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=solaris) (osgi.arch=x86_64))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.aix.ppc 2 0 2017-02-15 14:44:47.333
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.aix.ppc [213]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=aix) (osgi.arch=ppc))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.linux.s390 2 0 2017-02-15 14:44:47.336
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.linux.s390 [219]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=s390))"
+
+
+!ENTRY org.eclipse.swt.gtk.linux.aarch64 2 0 2017-02-15 14:44:47.337
+!MESSAGE Could not resolve module: org.eclipse.swt.gtk.linux.aarch64 [205]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=aarch64))"
+
+
+!ENTRY org.eclipse.swt.gtk.linux.arm 2 0 2017-02-15 14:44:47.340
+!MESSAGE Could not resolve module: org.eclipse.swt.gtk.linux.arm [206]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=arm))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.linux.x86 2 0 2017-02-15 14:44:47.341
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.linux.x86 [221]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86))"
+
+
+!ENTRY org.eclipse.equinox.launcher.gtk.linux.x86_64 2 0 2017-02-15 14:44:47.342
+!MESSAGE Could not resolve module: org.eclipse.equinox.launcher.gtk.linux.x86_64 [222]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(& (osgi.ws=gtk) (osgi.os=linux) (osgi.arch=x86_64))"
+
+
+!ENTRY org.eclipse.osgi 4 0 2017-02-15 14:44:47.344
+!MESSAGE Application error
+!STACK 1
+java.lang.RuntimeException: Application "org.eclipse.ui.ide.workbench" could not be found in the registry. The applications available are: org.eclipse.e4.ui.workbench.swt.E4Application, org.eclipse.e4.ui.workbench.swt.GenTopic, org.eclipse.equinox.app.error, org.eclipse.equinox.p2.garbagecollector.application, org.eclipse.equinox.p2.touchpoint.natives.nativePackageExtractor, org.eclipse.pde.junit.runtime.uitestapplication, org.eclipse.pde.junit.runtime.legacytestapplication, org.eclipse.pde.junit.runtime.coretestapplication, org.eclipse.pde.junit.runtime.coretestapplicationnonmain, org.eclipse.pde.junit.runtime.nonuithreadtestapplication.
+	at org.eclipse.equinox.internal.app.EclipseAppContainer.startDefaultApp(EclipseAppContainer.java:248)
+	at org.eclipse.equinox.internal.app.MainApplicationLauncher.run(MainApplicationLauncher.java:29)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:388)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:243)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:673)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:610)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1519)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)

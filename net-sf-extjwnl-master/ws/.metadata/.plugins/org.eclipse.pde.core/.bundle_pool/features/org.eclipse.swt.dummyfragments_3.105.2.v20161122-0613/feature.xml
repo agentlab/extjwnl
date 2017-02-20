@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.swt.dummyfragments"
+      label="SWT Fragment Dummies"
+      version="3.105.2.v20161122-0613">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="org.eclipse.swt.gtk.linux.aarch64"
+         os="linux"
+         ws="gtk"
+         arch="aarch64"
+         download-size="2"
+         install-size="2"
+         version="3.105.2.v20161122-0613"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt.gtk.linux.arm"
+         os="linux"
+         ws="gtk"
+         arch="arm"
+         download-size="2"
+         install-size="2"
+         version="3.105.2.v20161122-0613"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt.gtk.solaris.sparc"
+         os="solaris"
+         ws="gtk"
+         arch="sparc"
+         download-size="2"
+         install-size="2"
+         version="3.105.2.v20161122-0613"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt.gtk.solaris.x86"
+         os="solaris"
+         ws="gtk"
+         arch="x86"
+         download-size="2"
+         install-size="2"
+         version="3.105.2.v20161122-0613"
+         fragment="true"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.junit.feature"
+      label="JUnit"
+      version="4.12.0.201607081854"
+      provider-name="EclipseOrbit">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="JUnit Update Site" url="http://www.example.com/updatesite"/>
+   </url>
+
+   <requires>
+      <import plugin="org.hamcrest.core" version="1.3.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.junit"
+         download-size="323"
+         install-size="613"
+         version="4.12.0.201607081854"
+         unpack="false"/>
+
+</feature>

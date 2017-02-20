@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadataRepository version='1.1.0'?>
+<repository name='update site: http://andrei.gmxhome.de/eclipse/' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1.0.0'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1487602943781'/>
+    <property name='site.checksum' value='0'/>
+  </properties>
+  <references size='16'>
+    <repository uri='http://update.eclemma.org/' url='http://update.eclemma.org/' type='0' options='0'/>
+    <repository uri='http://update.eclemma.org/' url='http://update.eclemma.org/' type='1' options='0'/>
+    <repository uri='http://download.eclipse.org/technology/subversive/3.0/update-site/' url='http://download.eclipse.org/technology/subversive/3.0/update-site/' type='1' options='0'/>
+    <repository uri='http://download.eclipse.org/technology/subversive/3.0/update-site/' url='http://download.eclipse.org/technology/subversive/3.0/update-site/' type='0' options='0'/>
+    <repository uri='http://andrei.gmxhome.de/eclipse/' url='http://andrei.gmxhome.de/eclipse/' type='1' options='0'/>
+    <repository uri='http://andrei.gmxhome.de/eclipse/' url='http://andrei.gmxhome.de/eclipse/' type='0' options='0'/>
+    <repository uri='http://download.forge.objectweb.org/eclipse-update/' url='http://download.forge.objectweb.org/eclipse-update/' type='1' options='0'/>
+    <repository uri='http://download.eclipse.org/egit/updates/' url='http://download.eclipse.org/egit/updates/' type='1' options='0'/>
+    <repository uri='http://zipeditor.sourceforge.net/update' url='http://zipeditor.sourceforge.net/update' type='0' options='0'/>
+    <repository uri='http://zipeditor.sourceforge.net/update/' url='http://zipeditor.sourceforge.net/update/' type='1' options='0'/>
+    <repository uri='http://zipeditor.sourceforge.net/update' url='http://zipeditor.sourceforge.net/update' type='1' options='0'/>
+    <repository uri='http://zipeditor.sourceforge.net/update/' url='http://zipeditor.sourceforge.net/update/' type='0' options='0'/>
+    <repository uri='http://findbugs.cs.umd.edu/eclipse/' url='http://findbugs.cs.umd.edu/eclipse/' type='0' options='0'/>
+    <repository uri='http://findbugs.cs.umd.edu/eclipse/' url='http://findbugs.cs.umd.edu/eclipse/' type='1' options='0'/>
+    <repository uri='http://download.eclipse.org/egit/updates/' url='http://download.eclipse.org/egit/updates/' type='0' options='0'/>
+    <repository uri='http://download.forge.objectweb.org/eclipse-update/' url='http://download.forge.objectweb.org/eclipse-update/' type='0' options='0'/>
+  </references>
+</repository>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?compositeMetadataRepository version='1.0.0'?>
+<repository name='Missing SWT Fragments Nightly 3.105' type='org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository' version='1'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1454674015850'/>
+    <property name='p2.atomic.composite.loading' value='true'/>
+  </properties>
+  <children size='3'>
+    <child location='../../drops/nightly/3.105.0.v20160603-0902'/>
+	<child location='../../drops/nightly/3.105.1.v20160907-0248'/>
+	<child location='../../drops/nightly/3.105.2.v20161122-0613'/>
+  </children>
+</repository>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Workspace
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    name="workspace">
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="eclipse.target.platform"
+      value="Neon"
+      defaultValue="Neon"
+      label="Target Platform">
+    <description>Choose the compatibility level of the target platform</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="AgentLab Projects">
+    <restriction
+        xsi:type="setup:ProjectCatalog"
+        href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="OSGi Projects">
+      <restriction
+          xsi:type="setup:Project"
+          href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']/@projects[name='osgi']"/>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="extJWNL">
+        <restriction
+            xsi:type="setup:Project"
+            href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']/@projects[name='osgi']/@projects[name='net.sf.extjwnl']"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            type="FOLDER"
+            name="net.sf.extjwnl.git.clone.location"
+            value="D:\eclipse\net-sf-extjwnl-master\git\extjwnl"
+            label="extJWNL Git clone location">
+          <description>The absolute folder location where the extJWNL Git clone is located</description>
+        </setupTask>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="MystemWrapper">
+        <restriction
+            xsi:type="setup:Project"
+            href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']/@projects[name='osgi']/@projects[name='ru.agentlab.mystemwrapper']"/>
+        <setupTask
+            xsi:type="setup:VariableTask"
+            type="FOLDER"
+            name="ru.agentlab.mystemwrapper.git.clone.location"
+            value="D:\eclipse\net-sf-extjwnl-master\git\ru.agentlab.mystemwrapper"
+            label="MystemWrapper Git clone location">
+          <description>The absolute folder location where the MystemWrapper Git clone is located</description>
+        </setupTask>
+      </setupTask>
+    </setupTask>
+  </setupTask>
+  <stream href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']/@projects[name='osgi']/@projects[name='net.sf.extjwnl']/@streams[name='master']"/>
+  <stream href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']/@projects[name='osgi']/@projects[name='ru.agentlab.mystemwrapper']/@streams[name='master']"/>
+  <stream href="index:/org.eclipse.setup#//@projectCatalogs[name='ru.agentlab']/@projects[name='osgi']/@streams[name='master']"/>
+</setup:Workspace>

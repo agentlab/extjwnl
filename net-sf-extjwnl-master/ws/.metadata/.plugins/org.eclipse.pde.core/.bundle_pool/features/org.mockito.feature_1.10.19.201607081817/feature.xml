@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.mockito.feature"
+      label="Mockito"
+      version="1.10.19.201607081817"
+      provider-name="EclipseOrbit">
+
+   <description url="http://www.example.com/description">
+      [Enter Feature Description here.]
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <url>
+      <update label="Mockito Update Site" url="http://www.example.com/updatesite"/>
+   </url>
+
+   <requires>
+      <import plugin="org.hamcrest.core" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.objenesis"/>
+      <import plugin="org.junit"/>
+      <import plugin="org.apache.ant"/>
+   </requires>
+
+   <plugin
+         id="org.mockito"
+         download-size="889"
+         install-size="1628"
+         version="1.10.19.201607081817"
+         unpack="false"/>
+
+</feature>
